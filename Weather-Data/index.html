@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: rgb(177, 247, 183)">
+    <h1 style="text-align: center">WEATHER FORECAST</h1>
+    <div
+      class="form-div"
+      style="display: flex; justify-content: center; gap: 5px"
+    >
+      <form>
+        <input
+          type="text"
+          placeholder="Search City..."
+          id="input-box"
+          style="border-style: none; padding: 3px; border-radius: 5px"
+        />
+        <button
+          id="submit-btn"
+          type="submit"
+          style="border-style: none; border-radius: 5px"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <h3 id="error-message" style="text-align: center; color: red"></h3>
+    <div style="display: flex; justify-content: center; text-align: center">
+      <main>
+        <h2 id="city-name">City Name</h2>
+        <div class="weather-div">
+          <div style="display: flex; justify-content: center">
+            <h3 style="padding: 10px; color: green">Weather :</h3>
+            <h4 id="weather-div" style="padding: 10px">weather Detail</h4>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <h3 style="padding: 10px; color: green">Temperature :</h3>
+            <h4 id="temp-div" style="padding: 10px">Temperature details</h4>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <h3 style="padding: 10px; color: green">Wind Speed :</h3>
+            <h4 id="wind-div" style="padding: 10px">Wind Detail</h4>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

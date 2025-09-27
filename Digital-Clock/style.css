@@ -1,0 +1,20 @@
+* {
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.dark {
+  background-color: rgb(66, 66, 66);
+  color: whitesmoke;
+}
+
+.light {
+  background-color: whitesmoke;
+  color: rgb(66, 66, 66);
+}
