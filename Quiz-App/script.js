@@ -8,7 +8,7 @@ const startButton = document.getElementById("start-btn");
 const restartButton = document.getElementById("restart-btn");
 const scoreDisplay = document.getElementById("score-display");
 const optionsContainer = document.querySelector(".answer-container");
-let optionButtons;
+const progressBar = document.querySelector(".progress");
 let score = 0;
 let count = 1;
 const questions = {
@@ -32,6 +32,16 @@ const questions = {
     },
     answer: "b",
   },
+  3: {
+    question: "what is the capital of India?",
+    options: {
+      a: "Delhi",
+      b: "Mumbai",
+      c: "Kolkatta",
+      d: "Pune",
+    },
+    answer: "a",
+  },
 };
 
 startButton.addEventListener("click", startQuiz);
@@ -40,10 +50,13 @@ restartButton.addEventListener("click", restartQuiz);
 function startQuiz() {
   startContainer.style.display = "none";
   quizContainer.style.display = "block";
+  count = 1;
+  score = 0;
   loadQuestion();
 }
 
 function loadQuestion() {
+  manageProgressBar();
   if (count > Object.keys(questions).length) {
     quizContainer.style.display = "none";
     loadResults();
@@ -59,7 +72,7 @@ function loadQuestion() {
     <button class="option-btn" data-option="b">${questions[count].options.b}</button>
     <button class="option-btn" data-option="c">${questions[count].options.c}</button>
     <button class="option-btn" data-option="d">${questions[count].options.d}</button>`;
-  optionButtons = document.querySelectorAll(".option-btn");
+  let optionButtons = document.querySelectorAll(".option-btn");
   optionButtons.forEach((button) => {
     button.addEventListener("click", selectOption);
   });
@@ -69,9 +82,17 @@ function selectOption(event) {
     event.target.classList.add("correct");
     score++;
     count++;
-    loadQuestion();
+    manageProgressBar();
+    setTimeout(() => {
+      loadQuestion();
+    }, 500);
   } else {
-    event.target.classList.add("wrong");
+    event.target.classList.add("incorrect");
+    count++;
+    manageProgressBar();
+    setTimeout(() => {
+      loadQuestion();
+    }, 500);
   }
 }
 
@@ -84,9 +105,13 @@ function loadResults() {
 
 restartButton.addEventListener("click", restartQuiz);
 function restartQuiz() {
-  score = 0;
-  count = 1;
   resultContainer.style.display = "none";
   quizContainer.style.display = "none";
   startContainer.style.display = "block";
+}
+
+function manageProgressBar() {
+  progressBar.style.width = `${
+    ((count - 1) / Object.keys(questions).length) * 100
+  }%`;
 }
