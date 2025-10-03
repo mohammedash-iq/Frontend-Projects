@@ -10,22 +10,19 @@
     <div class="container">
       <div class="start-container">
         <h1>Welcome to the Quiz!</h1>
-        <button class="primary-btn">Start Quiz</button>
+        <button id="start-btn" class="primary-btn">Start Quiz</button>
       </div>
       <div class="quiz-container">
         <h2 id="question">Questions here</h2>
         <div class="question-container">
-          <p>
-            Question <span id="question-number"></span>of
-            <span id="total-question"></span>
-          </p>
-          <p id="score-display">Score</p>
+          <p>Question <span id="question-number"></span></p>
+          <p id="score-display"></p>
         </div>
         <div class="answer-container">anwers</div>
       </div>
       <div class="result-container">
-        <h1>Result Page</h1>
-        <button class="primary-btn">Restart Quiz</button>
+        <h1 id="result-text-element">Result Page</h1>
+        <button id="restart-btn" class="primary-btn">Restart Quiz</button>
       </div>
     </div>
     <script src="script.js"></script>
