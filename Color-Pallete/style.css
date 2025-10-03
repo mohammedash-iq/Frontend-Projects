@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitcount Single Ink", sans-serif;
+}
+
+body {
+  background: #1e1e1e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+.pallete-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+/* generate button styles */
+
+.generate-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.generate-btn:hover {
+  box-shadow: 0 0 20px rgba(173, 72, 235, 0.7);
+  transform: scale(1.05);
+}
+.generate-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+  color: purple;
+}
+/* color box styles */
+
+.color-box {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.color {
+  background-color: #ff7e5f;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+.color-info {
+  margin-top: 10px;
+}
+
+/*media query for mobile devices*/
+@media (max-width: 600px) {
+  .pallete-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .color {
+    height: 50px;
+    width: 100px;
+  }
+  .color-info {
+    font-size: 14px;
+  }
+  .color-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
